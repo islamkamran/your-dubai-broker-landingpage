@@ -117,9 +117,9 @@ Width : 180px;
     transition: all 0.3s ease;
 }
 
-/* Hero Section */
-.hero {
-    /* background: url('background.jpeg') center/cover; */
+
+/* .hero {
+    background: url('background.jpeg') center/cover;
     min-height: 100vh;
     position: relative;
     display: flex;
@@ -135,9 +135,25 @@ Width : 180px;
     width: 100%;
     height: 100%;
     object-fit: cover;
-    z-index: -1; /* Place behind content */
+    z-index: -1; 
+}  */
+
+.hero {
+    background: url('background.jpeg') center/cover no-repeat;
+    min-height: 100vh;
+    position: relative;
+    display: flex;
+    align-items: center;
+    margin-top: -40px;
 }
 
+.hero-overlay {
+    width: 100%;
+    color: #f9faf7;
+    padding: 30px;
+    position: relative;
+    z-index: 1;
+}
 .hero-content {
     position: relative;
     z-index: 1; /* Ensure content appears above video */
@@ -148,7 +164,16 @@ Width : 180px;
     color: #f9faf7;
     padding: 30px;
 }
-
+/* .hero::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.1); 
+    z-index: 0;
+} */
 .text-container {
     max-width: 550px;
     position: relative;
@@ -166,6 +191,7 @@ Width : 180px;
     bottom: 0;
     background: var(--hero-overlay);
     backdrop-filter: blur(5px);
+
     border-radius: 8px;
     z-index: 0;
 }
@@ -308,7 +334,7 @@ Width : 180px;
 
 .about-image img {
     width: 75%;
-    height: 700px;
+    height: 70%;
     border-radius: 8px;
     box-shadow: 0 10px 30px rgba(0,0,0,0.1);
     margin-top: -70px;
@@ -317,7 +343,7 @@ Width : 180px;
 
 /* Banner Section */
 .banner_m {
-    padding: 60px 20px;
+    /* padding: 60px 20px; */
     position: relative;
 }
 
@@ -325,7 +351,7 @@ Width : 180px;
     position: relative;
     width: 100%;
     min-height: 400px;
-    border-radius: 8px;
+    /* border-radius: 8px; */
     overflow: hidden;
 }
 
@@ -366,6 +392,7 @@ Width : 180px;
 .star-row {
     text-align: center;
     margin-bottom: 5px;
+    margin-left: 130px;
 }
 
 .star-icon {
@@ -379,6 +406,7 @@ Width : 180px;
     text-shadow: 0 2px 4px rgba(0,0,0,0.3);
     margin-bottom: 200px;
     line-height: 1.2;
+    margin-left: 130px;
 }
 
 /* Responsive adjustments */
