@@ -403,7 +403,7 @@ width : 40%;
 }
 
 .banner-text_m h2 {
-    display: ruby-text;
+    display:ruby-text;
     font-size: 3.5rem;
     color: white;
     text-shadow: 0 2px 4px rgba(0,0,0,0.3);
