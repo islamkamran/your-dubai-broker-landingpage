@@ -118,8 +118,8 @@ width : 40%;
 }
 
 
-/* .hero {
-    background: url('background.jpeg') center/cover;
+.hero {
+    /* background: url('background.jpeg') center/cover; */
     min-height: 100vh;
     position: relative;
     display: flex;
@@ -136,16 +136,16 @@ width : 40%;
     height: 100%;
     object-fit: cover;
     z-index: -1; 
-}  */
+} 
 
-.hero {
+/* .hero {
     background: url('background.jpeg') center/cover no-repeat;
     min-height: 100vh;
     position: relative;
     display: flex;
     align-items: center;
     margin-top: -40px;
-}
+} */
 
 .hero-overlay {
     width: 100%;
