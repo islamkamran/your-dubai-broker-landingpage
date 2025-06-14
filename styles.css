@@ -119,7 +119,7 @@ width : 40%;
 
 .hero {
     /* background: url('background.jpeg') center/cover; */
-    min-height: 100vh;
+    height: 100vh;
     position: relative;
     display: flex;
     align-items: center;
@@ -294,7 +294,7 @@ width : 40%;
 }
 /* About Section */
 .about {
-    padding: 60px 20px;
+    padding: 30px 60px 0px 60px;
 }
 
 .about-container {
@@ -425,7 +425,7 @@ width : 40%;
 
 /* Lead Magnet Section */
 .lead-magnet {
-    padding: 60px 20px;
+    padding: 30px 60px 30px 60px;
     background: var(--light);
 }
 
@@ -519,7 +519,7 @@ width : 40%;
 
 /* Differentiators Section */
 .differentiators {
-    padding: 60px 20px;
+    padding: 30px 60px 30px 60px;
     background: var(--gray);
 }
 
@@ -612,7 +612,7 @@ width : 40%;
 
 /* Testimonials Section */
 .testimonials {
-    padding: 60px 20px;
+    padding: 30px 60px 30px 60px;
 }
 
 .testimonial-carousel-container {
@@ -668,7 +668,8 @@ width : 40%;
 
 /* Blog Teaser Section */
 .blog-teaser {
-    padding: 60px 20px;
+    padding: 20px 60px 20px 60px;
+    padding-top: 0px;
 }
 
 .blog-grid {
@@ -737,7 +738,7 @@ width : 40%;
 
 /* Newsletter Section */
 .newsletter {
-    padding: 20px 20px;
+    padding: 30px 60px 30px 60px;
     background: var(--gray);
     color: white;
 }
@@ -786,7 +787,9 @@ width : 40%;
 
 /* Contact CTA Section */
 .contact-cta {
-    padding: 60px 20px;
+    padding: 30px 20px;
+    padding-bottom: 10px;
+    margin-left: 3%;
     text-align: center;
 }
 
@@ -991,45 +994,19 @@ footer {
     }
 }
 
-@media (min-width: 500px) {
-    .sticky-header {
-        padding: 0px 100px;
-    }
-    
-    .hero-overlay {
-        padding: 100px;
-        padding-top: 450px;
-    }
-    
-    .section-header {
-        margin-bottom: 50px;
-        margin-top: 30px;
-    }
-    
-    .about {
-        padding: 0px 100px;
-    }
-    
-    .lead-magnet {
-        padding: 10px 100px;
-    }
-    
-    .differentiators, .testimonials, .blog-teaser {
-        padding: 10px 100px;
-    }
-    
-    .contact-cta {
-        padding: 0px 100px;
-    }
-}
 
+/* Mobile styles (up to 767px) */
 @media (max-width: 767px) {
     .mobile-menu-toggle {
         display: block;
     }
     
+    .sticky-header {
+        padding: 15px 20px;
+    }
+    
     .sticky-header .logo img {
-        max-height: 40px;
+        width: 30%;
     }
     
     .nav-links {
@@ -1054,14 +1031,26 @@ footer {
         display: flex;
         animation: slideDown 0.4s ease-out;
     }
-}
-/* Responsive adjustments */
-@media (max-width: 768px) {
+
+    /* Hero section adjustments */
+    .hero-overlay {
+        padding: 20px;
+        padding-top: 80%;
+    }
+    
+    .hero h1 {
+        font-size: 1.8rem;
+        line-height: 1.3;
+    }
+    
+    /* Banner section */
     .banner-content_m {
         margin-left: 0;
+        padding: 4% 7%;
+        /* padding: 30px; */
+        padding-left: 10%;
         flex-direction: column;
         text-align: center;
-        padding: 20px;
     }
     
     .banner-image_m {
@@ -1070,32 +1059,127 @@ footer {
         margin-bottom: 20px;
     }
     
+    .banner-image_m img {
+        width: 100%;
+    }
+    
     .banner-text_m h2 {
         margin-left: 0;
+        margin-bottom: 20px;
         font-size: 2rem;
     }
+    
     .star-row {
         margin-left: 0;
         justify-content: center;
     }
-  
+    
+    /* About section */
+    .about {
+        padding: 20px 20px 0px 20px
+    }
+    
     .about-image img {
         margin-left: auto;
         margin-right: auto;
         width: 100%;
+        margin-top: 20px;
     }
-  
-    .diff-card, .testimonial-card {
+    
+    /* Carousel cards */
+    .diff-card, 
+    .testimonial-card {
         min-width: 100%;
     }
+    
+    /* Contact buttons */
+    .whatsapp-btn, 
+    .schedule-btn {
+        width: 100%;
+    }
+    
+    /* Section padding */
+    .section-header {
+        margin-bottom: 30px;
+    }
+    
+    .differentiators, 
+    .testimonials, 
+    .blog-teaser,
+    .lead-magnet {
+        padding: 20px 20px;
+    }
 }
-@keyframes slideDown {
-  from { 
-    transform: translateY(-100%);
-    opacity: 0;
-  }
-  to { 
-    transform: translateY(0);
-    opacity: 1;
-  }
+
+/* Tablet & Desktop styles (768px and up) */
+@media (min-width: 768px) {
+    .sticky-header {
+        padding: 5px 50px;
+    }
+    
+    .sticky-header .logo img {
+        max-height: 30px;
+    }
+    
+    .hero-overlay {
+        padding: 100px;
+        padding-top: 450px;
+    }
+    
+    .hero h1 {
+        font-size: 2.5rem;
+        line-height: 1.3;
+    }
+    
+    .about-container {
+        flex-direction: row;
+        gap: 50px;
+    }
+    
+    .about-content {
+        flex: 1;
+        margin-left: 20px;
+    }
+    
+    .about-image {
+        flex: 1;
+    }
+    
+    .lead-container {
+        flex-direction: row;
+        gap: 40px;
+    }
+    
+    .guide-preview {
+        flex: 1;
+    }
+    
+    .lead-form {
+        flex: 1;
+    }
+    
+    .diff-carousel .diff-card,
+    .testimonial-carousel .testimonial-card {
+        min-width: calc(50% - 10px);
+    }
+    
+    .blog-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    
+    .contact-options {
+        flex-direction: row;
+        justify-content: center;
+        gap: 20px;
+    }
+    
+    .whatsapp-btn,
+    .schedule-btn {
+        width: auto;
+    }
+    
+    .legal {
+        flex-direction: row;
+        justify-content: space-between;
+    }
 }
