@@ -226,6 +226,77 @@ function initCarousels() {
             }, 200);
         });
     }
+
+    // Video Carousel
+    const videosCarousel = document.querySelector('.videos-carousel');
+    if (videosCarousel) {
+        const videoCards = document.querySelectorAll('.videos-carousel .video-card');
+        const videosPrevBtn = document.querySelector('.property-videos .carousel-prev');
+        const videosNextBtn = document.querySelector('.property-videos .carousel-next');
+        let videosCurrentIndex = 0;
+        let isVideosDragging = false;
+        let startVideosPos = 0;
+        let currentVideosTranslate = 0;
+    
+        // Touch event handlers for Video carousel
+        videosCarousel.addEventListener('touchstart', (e) => {
+            isVideosDragging = true;
+            startVideosPos = e.touches[0].clientX;
+            currentVideosTranslate = getTranslateX(videosCarousel);
+            videosCarousel.style.transition = 'none';
+        });
+    
+        videosCarousel.addEventListener('touchmove', (e) => {
+            if (!isVideosDragging) return;
+            const currentPos = e.touches[0].clientX;
+            const diff = currentPos - startVideosPos;
+            videosCarousel.style.transform = `translateX(${-currentVideosTranslate + diff}px)`;
+        });
+    
+        videosCarousel.addEventListener('touchend', () => {
+            if (!isVideosDragging) return;
+            isVideosDragging = false;
+        
+            const cardsToShow = window.innerWidth < 768 ? 1 : 2;
+            const threshold = videosCarousel.firstElementChild.offsetWidth / 4;
+            const currentTranslate = getTranslateX(videosCarousel);
+        
+            if (currentTranslate < currentVideosTranslate - threshold) {
+                // Swiped left
+                if (videosCurrentIndex < videoCards.length - cardsToShow) {
+                    videosCurrentIndex++;
+                }
+            } else if (currentTranslate > currentVideosTranslate + threshold) {
+                // Swiped right
+                if (videosCurrentIndex > 0) {
+                    videosCurrentIndex--;
+                }
+            }
+        
+            updateCarousel(videosCarousel, videosCurrentIndex, window.innerWidth < 768);
+        });
+    
+        // Video Carousel Navigation
+        if (videosPrevBtn && videosNextBtn) {
+            videosPrevBtn.addEventListener('click', () => {
+                if (videosCurrentIndex > 0) {
+                    videosCurrentIndex--;
+                    updateCarousel(videosCarousel, videosCurrentIndex, window.innerWidth < 768);
+                }
+            });
+        
+            videosNextBtn.addEventListener('click', () => {
+                const cardsToShow = window.innerWidth < 768 ? 1 : 2;
+                if (videosCurrentIndex < videoCards.length - cardsToShow) {
+                    videosCurrentIndex++;
+                    updateCarousel(videosCarousel, videosCurrentIndex, window.innerWidth < 768);
+                }
+            });
+        }
+    
+        // Initialize carousel position
+        updateCarousel(videosCarousel, videosCurrentIndex, window.innerWidth < 768);
+    }
     
     // Helper function to get current translateX value
     function getTranslateX(element) {
