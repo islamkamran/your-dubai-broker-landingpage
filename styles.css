@@ -426,7 +426,7 @@ width : 40%;
 /* Lead Magnet Section */
 .lead-magnet {
     padding: 30px 60px 30px 60px;
-    background: var(--light);
+    /* background: var(--light); */
 }
 
 .lead-container {
@@ -613,7 +613,7 @@ width : 40%;
 /* Property Videos Section */
 .property-videos {
     padding: 30px 60px 30px 60px;
-    background: var(--light);
+    /* background: var(--light); */
 }
 
 .videos-carousel-container {
@@ -786,7 +786,7 @@ width : 40%;
 /* Newsletter Section */
 .newsletter {
     padding: 30px 60px 30px 60px;
-    background: var(--gray);
+    /* background: var(--gray); */
     color: white;
 }
 
