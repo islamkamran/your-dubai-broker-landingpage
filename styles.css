@@ -277,7 +277,7 @@ width : 40%;
 
 .section-header .enhanced-h2 {
     font-size: 2rem;
-    color: var(--primary);
+    color: var(--accent);
     position: relative;
     display: inline-block;
 }
@@ -290,7 +290,7 @@ width : 40%;
     transform: translateX(-50%);
     width: 80px;
     height: 3px;
-    background: var(--primary);
+    background: var(--accent);
 }
 /* About Section */
 .about {
@@ -426,7 +426,7 @@ width : 40%;
 /* Lead Magnet Section */
 .lead-magnet {
     padding: 30px 60px 30px 60px;
-    /* background: var(--light); */
+    background: var(--primary);
 }
 
 .lead-container {
@@ -520,7 +520,7 @@ width : 40%;
 /* Differentiators Section */
 .differentiators {
     padding: 30px 60px 30px 60px;
-    background: var(--gray);
+    background: var(--primary);
 }
 
 .diff-carousel-container {
